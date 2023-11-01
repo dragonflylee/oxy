@@ -360,7 +360,7 @@ func (b *bufferWriter) expectBody(r *http.Request) bool {
 	if r.Method == "HEAD" {
 		return false
 	}
-	if (b.code >= 100 && b.code < 200) || b.code == 204 || b.code == 304 {
+	if (b.code >= 100 && b.code < 200) || b.code == 204 || b.code == 304 || b.code == 302 {
 		return false
 	}
 	// refer to https://github.com/vulcand/oxy/issues/113
